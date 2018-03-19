@@ -7,6 +7,7 @@ h1 {
   width: 100px;
   height: 100px;
   margin: 0px;
+  text-align: center;
 }
 
 table{
@@ -14,36 +15,36 @@ table{
   border-spacing: 0px;
 }
 
-#cell0{
+.cell0{
   border-left: 0;
   border-top: 0;
 }
 
-#cell1{
+.cell1{
   border-top: 0;
 }
 
-#cell2{
+.cell2{
   border-top: 0;
   border-right: 0;
 }
 
-#cell3{
+.cell3{
   border-left: 0;
 }
 
-#cell5{
+.cell5{
   border-right: 0;
 }
 
-#cell6{
+.cell6{
   border-left: 0;
   border-bottom: 0;
 }
-#cell7{
+.cell7{
   border-bottom: 0;
 }
-#cell8{
+.cell8{
   border-right: 0;
   border-bottom: 0;
 }
