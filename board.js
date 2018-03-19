@@ -1,7 +1,8 @@
 var cells = document.querySelectorAll("td");
 var board = [];
 var token = "X"
-var ai = false;
+var userToken = "X"
+var ai = true;
 var winner = false;
 for (var i = 0; i < 9; i++){
   board.push("")
@@ -16,6 +17,12 @@ var moves = [
   [0, 4, 8],
   [2, 4, 6]
 ]
+
+var buttons = {
+  reset: document.querySelector("#reset"),
+  token: document.querySelector("#token"),
+  ai: document.querySelector("#ai")
+}
 function checkWin(moves){
   for(var i = 0; i < moves.length; i++){
     var arr = [board[moves[i][0]], board[moves[i][1]], board[moves[i][2]]]
@@ -65,7 +72,6 @@ cells.forEach(function(cell){
 })
 
 function reset(){
-  token = "X"
   winner = false;
   board = [];
   for (var i = 0; i < 9; i++){
@@ -85,4 +91,15 @@ function aiPlay(){
   play(cell);
 }
 
-document.querySelector("#reset").addEventListener("click", reset);
+buttons.reset.addEventListener("click", reset);
+buttons.ai.addEventListener("click", function(){
+  reset();
+  ai = ai == true ? false : true;
+  this.textContent = ai == true ? "NPC ON" : "NPC OFF";
+})
+buttons.token.addEventListener("click", function(){
+  reset();
+  userToken = userToken == "X" ? "O" : "X"
+  token = userToken;
+  this.textContent = userToken;
+})
