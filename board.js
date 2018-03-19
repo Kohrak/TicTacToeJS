@@ -57,6 +57,7 @@ function play(cell){
     alert(token + " win");
   }
   changeToken();
+
 }
 
 cells.forEach(function(cell){
@@ -68,10 +69,14 @@ cells.forEach(function(cell){
         aiPlay();
       }
     }
+    if (winner){
+      reset();
+    }
   })
 })
 
 function reset(){
+  token = userToken;
   winner = false;
   board = [];
   for (var i = 0; i < 9; i++){
@@ -98,8 +103,7 @@ buttons.ai.addEventListener("click", function(){
   this.textContent = ai == true ? "NPC ON" : "NPC OFF";
 })
 buttons.token.addEventListener("click", function(){
-  reset();
   userToken = userToken == "X" ? "O" : "X"
-  token = userToken;
+  reset();
   this.textContent = userToken;
 })
