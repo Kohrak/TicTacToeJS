@@ -1,9 +1,9 @@
 var cells = document.querySelectorAll("td");
 var board = [];
 for (var i = 0; i < 9; i++){
-  board.push("n")
+  board.push("")
 }
-var winningMoves = [
+var moves = [
   [0, 1, 2],
   [3, 4, 5],
   [6, 7, 8],
@@ -12,3 +12,16 @@ var winningMoves = [
   [2, 5, 8],
   [0, 4, 8]
 ]
+function checkWin(moves){
+  for(var i = 0; i < moves.length; i++){
+    var arr = [board[moves[i][0]], board[moves[i][1]], board[moves[i][2]]]
+    if (!arr.includes("")){
+      if (arr.reduce(function(a, b){ return (a === b) ? a : NaN; })){
+        console.log(board);
+        return(true);
+      }
+    }
+  }
+  console.log(board);
+  return(false);
+}
