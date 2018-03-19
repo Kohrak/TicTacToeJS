@@ -84,3 +84,5 @@ function aiPlay(){
   var cell = blanks[Math.floor(Math.random() * blanks.length)];
   play(cell);
 }
+
+document.querySelector("#reset").addEventListener("click", reset);
