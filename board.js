@@ -25,3 +25,9 @@ function checkWin(moves){
   console.log(board);
   return(false);
 }
+
+function updateBoard(cells, board){
+  for(var i = 0; i < board.length; i++){
+    cells[i].textContent = board[i];
+  }
+}
