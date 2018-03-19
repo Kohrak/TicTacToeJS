@@ -1,6 +1,8 @@
 var cells = document.querySelectorAll("td");
 var board = [];
 var token = "X"
+var ai = false;
+var winner = false;
 for (var i = 0; i < 9; i++){
   board.push("")
 }
@@ -43,7 +45,8 @@ function changeToken(){
 function play(cell){
   move(cell);
   updateBoard();
-  if(checkWin(moves)){
+  winner = checkWin(moves)
+  if(winner){
     alert(token + " win");
   }
   changeToken();
@@ -51,9 +54,25 @@ function play(cell){
 
 cells.forEach(function(cell){
   cell.addEventListener("click", function(){
-    play(parseInt(this.id))
+  var num = parseInt(this.id)
+    if (board[num] == "" && !winner){
+      play(num);
+      if(ai && !winner){
+        aiPlay();
+      }
+    }
   })
 })
+
+function reset(){
+  token = "X"
+  winner = false;
+  board = [];
+  for (var i = 0; i < 9; i++){
+    board.push("")
+  }
+  updateBoard();
+}
 
 function aiPlay(){
   var blanks = []
