@@ -11,7 +11,8 @@ var moves = [
   [0, 3, 6],
   [1, 4, 7],
   [2, 5, 8],
-  [0, 4, 8]
+  [0, 4, 8],
+  [2, 4, 6]
 ]
 function checkWin(moves){
   for(var i = 0; i < moves.length; i++){
@@ -47,3 +48,9 @@ function play(cell){
   }
   changeToken();
 }
+
+cells.forEach(function(cell){
+  cell.addEventListener("click", function(){
+    play(parseInt(this.id))
+  })
+})
