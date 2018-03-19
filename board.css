@@ -1,0 +1,49 @@
+h1 {
+    text-align: center;
+}
+
+.board {
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  margin: 0px;
+}
+
+table{
+  margin: auto;
+  border-spacing: 0px;
+}
+
+#cell1{
+  border-left: 0;
+  border-top: 0;
+}
+
+#cell2{
+  border-top: 0;
+}
+
+#cell3{
+  border-top: 0;
+  border-right: 0;
+}
+
+#cell4{
+  border-left: 0;
+}
+
+#cell6{
+  border-right: 0;
+}
+
+#cell7{
+  border-left: 0;
+  border-bottom: 0;
+}
+#cell8{
+  border-bottom: 0;
+}
+#cell9{
+  border-right: 0;
+  border-bottom: 0;
+}
