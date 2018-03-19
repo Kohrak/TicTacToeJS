@@ -18,12 +18,10 @@ function checkWin(moves){
     var arr = [board[moves[i][0]], board[moves[i][1]], board[moves[i][2]]]
     if (!arr.includes("")){
       if (arr.reduce(function(a, b){ return (a === b) ? a : NaN; })){
-        console.log(board);
         return(true);
       }
     }
   }
-  console.log(board);
   return(false);
 }
 
@@ -39,4 +37,13 @@ function move(cell){
 
 function changeToken(){
   token = token == "X" ? "O" : "X";
+}
+
+function play(cell){
+  move(cell);
+  updateBoard();
+  if(checkWin(moves)){
+    alert(token + " win");
+  }
+  changeToken();
 }
