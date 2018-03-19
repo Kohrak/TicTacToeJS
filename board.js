@@ -1,5 +1,6 @@
 var cells = document.querySelectorAll("td");
 var board = [];
+var token = "X"
 for (var i = 0; i < 9; i++){
   board.push("")
 }
@@ -26,8 +27,16 @@ function checkWin(moves){
   return(false);
 }
 
-function updateBoard(cells, board){
+function updateBoard(){
   for(var i = 0; i < board.length; i++){
     cells[i].textContent = board[i];
   }
+}
+
+function move(cell){
+  board[cell] = token;
+}
+
+function changeToken(){
+  token = token == "X" ? "O" : "X";
 }
