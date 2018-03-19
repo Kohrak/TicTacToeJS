@@ -54,3 +54,14 @@ cells.forEach(function(cell){
     play(parseInt(this.id))
   })
 })
+
+function aiPlay(){
+  var blanks = []
+  for(var i = 0; i < board.length; i++){
+    if(board[i] == ""){
+      blanks.push(i);
+    }
+  }
+  var cell = blanks[Math.floor(Math.random() * blanks.length)];
+  play(cell);
+}
