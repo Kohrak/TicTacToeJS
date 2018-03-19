@@ -14,36 +14,36 @@ table{
   border-spacing: 0px;
 }
 
-#cell1{
+#cell0{
   border-left: 0;
+  border-top: 0;
+}
+
+#cell1{
   border-top: 0;
 }
 
 #cell2{
   border-top: 0;
+  border-right: 0;
 }
 
 #cell3{
-  border-top: 0;
-  border-right: 0;
+  border-left: 0;
 }
 
-#cell4{
-  border-left: 0;
+#cell5{
+  border-right: 0;
 }
 
 #cell6{
-  border-right: 0;
-}
-
-#cell7{
   border-left: 0;
   border-bottom: 0;
 }
-#cell8{
+#cell7{
   border-bottom: 0;
 }
-#cell9{
+#cell8{
   border-right: 0;
   border-bottom: 0;
 }
